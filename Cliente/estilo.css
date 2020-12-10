@@ -1,0 +1,68 @@
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+#oculto {
+    display: none;
+    width: 300px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+div table {
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 50px 10px;
+}
+
+.add {
+    width: 150px;
+    height: 30px;
+    background-color: #60f346;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.modal {
+    border: 1px solid teal;
+    border-radius: 10px;
+    padding: 2em;
+    background-color: #fefefe;
+    width: 50%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

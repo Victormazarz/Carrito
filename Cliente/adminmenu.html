@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script type="text/javascript" src="code.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    </link>
+    <h1>Admin menu</h1>
+</head>
+
+<body style="font-size: 20px;">
+    <div class="tab">
+        <button class="tablinks" onclick="ventanas(event, 'clientes')">Gestion clientes</button>
+        <button class="tablinks" onclick="ventanas(event, 'pedidos')">Gestion de pedidos</button>
+    </div>
+    <div id="clientes" class="tabcontent">
+        <button id='addCliente' class="add">Anadir nuevo</button>
+        <table id="tablaClientes">
+            <tbody>
+                <tr>
+                    <td>DNI</td>
+                    <td>Nombre</td>
+                    <td>Operaciones</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="pedidos" class="tabcontent">
+        <button id="addpedido" class="add">Anadir nuevo</button>
+        <table id="tablaPedidos">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td>Cliente</td>
+                    <td>Fecha</td>
+                    <td>Operaciones</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="modal" id="modalcliente">
+        <h1>Nuevo usuario</h1>
+        <table>
+            <tr>
+                <td>DNI</td>
+                <td><input type="text" id="dniinput" required></td>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" id="nombreinput"></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" id="direcinput"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="emailinput"></td>
+            </tr>
+        </table>
+        <button onclick="AddUsuario()">Crear Nuevo</button>
+        <button id='cancelarModal' onclick="CancelarModal()" onclick="CancelarModal()">Cancelar</button>
+    </div>
+
+
+    <div class="modal" id="modalclienteModificar">
+        <h1>Modificar Usuario</h1>
+        <table>
+            <tr>
+                <td>DNI</td>
+                <td><input type="text" id="dniinputModificar"></td>
+            </tr>
+            <tr>
+                <td>Nombre</td>
+                <td><input type="text" id="nombreinputModificar"></td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td><input type="text" id="direcinputModificar"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="emailinputModificar"></td>
+            </tr>
+        </table>
+        <button id="GuardarCambiosCliente">Guardar Cambios</button>
+        <button id='cancelarModal' onclick="CancelarModal()" onclick="CancelarModal()">Cancelar</button>
+    </div>
+
+
+
+    <div class="modal" id="modalpedido">
+        <h1>Nuevo Pedido</h1>
+        <table id=tablapedidomodal>
+            <tbody>
+                <tr>
+                    <td>Fecha</td>
+                    <td><input type="date" id="fecha"></td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td><select id='nombresclientes'></select></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="AddPedido()">Crear Nuevo</button>
+        <button id='cancelarpedido' onclick="CancelarModal()">Cancelar</button>
+    </div>
+
+
+
+    <div class="modal" id="modalpedidoModificar">
+        <h1>Nuevo Pedido</h1>
+        <table id=tablapedidomodal>
+            <tbody>
+                <tr>
+                    <td>Fecha</td>
+                    <td><input type="date" id="fechaModificar"></td>
+                </tr>
+                <tr>
+                    <td>Cliente</td>
+                    <td><select id='nombresclientesModificar'></select></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id=GuardarCambiosPedido>Guardar Cambios</button>
+        <button id='cancelarpedido' onclick="CancelarModal()">Cancelar</button>
+    </div>
+
+
+
+    <div class="modal" id="modalLineapedido">
+        <h1>Nuevo Pedido</h1>
+        <table id=tablapedidomodal>
+            <tbody>
+                <tr>
+                    <td>Cantidad</td>
+                    <td><input type="number" id="CantidadLinea" min="1"></td>
+                </tr>
+                <tr>
+                    <td>Producto</td>
+                    <td><select id='ProductoLinea'></select></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="CrearLineaPedido()" id=CrearNuevoLineaPedido>Crear Nuevo</button>
+        <button id='cancelarpedido' onclick="CancelarModal()">Cancelar</button>
+    </div>
+
+
+</body>
+
+</html>
